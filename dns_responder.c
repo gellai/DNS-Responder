@@ -37,7 +37,7 @@
 void die(char *s) 
 {
 	perror(s);
-    exit(1);
+	exit(1);
 }
 
 /* Clear the packet buffer */
@@ -113,7 +113,7 @@ int main()
 
 	clear_buffer(buf);
 
-	#ifdef _WIN32
+#ifdef _WIN32
 		if( WSAStartup(MAKEWORD(2,2), &wsa) != 0 ) {
 			printf("Error code: %d\n", WSAGetLastError());
 			die("Failed");
@@ -123,12 +123,12 @@ int main()
 			printf("Error code: %d\n", WSAGetLastError());
 			die("Could not create socket");
 		}
-	#endif
+#endif
 
-	#ifdef __linux__
+#ifdef __linux__
 		if( (c_socket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1 ) 
 			die("Socket error");
-	#endif
+#endif
 
 	memset( (char *)&si_server, 0, sizeof(si_server) );
 
