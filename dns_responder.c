@@ -101,7 +101,7 @@ void dns_response(int *r_socket, char *r_buf, int *size, int *r_ip, struct in_ad
 int main() 
 {
 	struct sockaddr_in si_server, 
-						si_client;
+					   si_client;
 	int c_socket, 
 		c_size = sizeof(si_client),
 		bytes_received,
